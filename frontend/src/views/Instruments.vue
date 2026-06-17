@@ -4,6 +4,7 @@
       <el-button type="primary" @click="openDialog()">新增乐器</el-button>
       <el-select v-model="filterStatus" placeholder="状态筛选" clearable style="width: 140px; margin-left: 12px;">
         <el-option label="可用" value="available" />
+        <el-option label="已出租" value="rented" />
         <el-option label="使用中" value="in_use" />
         <el-option label="维修中" value="maintenance" />
         <el-option label="报废" value="retired" />
@@ -48,6 +49,7 @@
         <el-form-item label="状态">
           <el-select v-model="form.status" style="width: 100%">
             <el-option label="可用" value="available" />
+            <el-option label="已出租" value="rented" />
             <el-option label="使用中" value="in_use" />
             <el-option label="维修中" value="maintenance" />
             <el-option label="报废" value="retired" />
@@ -79,11 +81,11 @@ const filteredList = computed(() => {
 })
 
 function statusText(s) {
-  const map = { available: '可用', in_use: '使用中', maintenance: '维修中', retired: '报废' }
+  const map = { available: '可用', rented: '已出租', in_use: '使用中', maintenance: '维修中', retired: '报废' }
   return map[s] || s
 }
 function statusType(s) {
-  const map = { available: 'success', in_use: 'primary', maintenance: 'warning', retired: 'info' }
+  const map = { available: 'success', rented: 'danger', in_use: 'primary', maintenance: 'warning', retired: 'info' }
   return map[s] || 'info'
 }
 function fmtDate(d) {

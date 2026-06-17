@@ -228,6 +228,43 @@ class InstrumentCreate(BaseModel):
     price: Decimal = Decimal("0")
     remark: Optional[str] = None
 
+class InstrumentRentalOut(BaseModel):
+    id: int
+    instrument_id: int
+    student_id: int
+    start_date: date
+    end_date: date
+    rental_plan: str
+    rent_amount: Decimal
+    deposit_amount: Decimal
+    deposit_status: str
+    actual_return_date: Optional[date] = None
+    return_check: Optional[str] = None
+    damage_description: Optional[str] = None
+    status: str
+    remark: Optional[str] = None
+    created_at: datetime
+    instrument: Optional[InstrumentOut] = None
+    student: Optional[StudentOut] = None
+    class Config:
+        from_attributes = True
+
+class InstrumentRentalCreate(BaseModel):
+    instrument_id: int
+    student_id: int
+    start_date: date
+    end_date: date
+    rental_plan: str
+    rent_amount: Decimal
+    deposit_amount: Decimal = Decimal("0")
+    deposit_status: str = "unpaid"
+    remark: Optional[str] = None
+
+class InstrumentRentalReturn(BaseModel):
+    actual_return_date: date
+    return_check: str
+    damage_description: Optional[str] = None
+
 class DashboardStats(BaseModel):
     total_students: int
     total_teachers: int

@@ -18,6 +18,7 @@ const routes = [
       { path: 'lesson-records', component: () => import('../views/LessonRecords.vue') },
       { path: 'exams', component: () => import('../views/Exams.vue') },
       { path: 'instruments', component: () => import('../views/Instruments.vue') },
+      { path: 'rentals', component: () => import('../views/Rentals.vue') },
       { path: 'users', component: () => import('../views/Users.vue') },
     ]
   }

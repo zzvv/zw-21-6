@@ -9,7 +9,7 @@ class Settings:
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 480
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL",
-        "mysql+pymysql://vehicle_user:vehicle_pass@localhost/vehicle_db?charset=utf8mb4"
+        "sqlite:///./music_school.db"
     )
 
 settings = Settings()

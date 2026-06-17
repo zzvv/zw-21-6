@@ -16,6 +16,7 @@
         <el-menu-item index="/lesson-records"><el-icon><Document /></el-icon><span>上课记录</span></el-menu-item>
         <el-menu-item index="/exams"><el-icon><Medal /></el-icon><span>考级管理</span></el-menu-item>
         <el-menu-item index="/instruments"><el-icon><Headset /></el-icon><span>乐器管理</span></el-menu-item>
+        <el-menu-item index="/rentals"><el-icon><CreditCard /></el-icon><span>乐器租赁</span></el-menu-item>
         <el-menu-item index="/users" v-if="userStore.isAdmin"><el-icon><Setting /></el-icon><span>用户管理</span></el-menu-item>
       </el-menu>
     </el-aside>
@@ -53,6 +54,7 @@ const pageTitle = computed(() => {
     '/lesson-records': '上课记录',
     '/exams': '考级管理',
     '/instruments': '乐器管理',
+    '/rentals': '乐器租赁',
     '/users': '用户管理',
   }
   return map[route.path] || '琴行教务系统'
