@@ -122,6 +122,11 @@
             <el-option label="严重损坏" value="severe_damage" />
             <el-option label="遗失" value="lost" />
           </el-select>
+          <div style="margin-top: 8px; font-size: 12px; color: #666;">
+            <el-tag size="small" type="success">完好/轻微磨损</el-tag> → 恢复可租
+            <el-tag size="small" type="warning" style="margin-left: 8px;">严重损坏</el-tag> → 标记维修
+            <el-tag size="small" type="danger" style="margin-left: 8px;">遗失</el-tag> → 标记报废
+          </div>
         </el-form-item>
         <el-form-item label="损耗说明">
           <el-input v-model="returnForm.damage_description" type="textarea" :rows="3" placeholder="请描述乐器损耗情况..." />
