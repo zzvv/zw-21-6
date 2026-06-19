@@ -123,8 +123,8 @@
             <el-option label="遗失" value="lost" />
           </el-select>
           <div style="margin-top: 8px; font-size: 12px; color: #666;">
-            <el-tag size="small" type="success">完好/轻微磨损</el-tag> → 恢复可租
-            <el-tag size="small" type="warning" style="margin-left: 8px;">严重损坏</el-tag> → 标记维修
+            <el-tag size="small" type="success">完好</el-tag> → 恢复可租
+            <el-tag size="small" type="warning" style="margin-left: 8px;">轻微磨损/严重损坏</el-tag> → 标记维修（需确认后恢复）
             <el-tag size="small" type="danger" style="margin-left: 8px;">遗失</el-tag> → 标记报废
           </div>
         </el-form-item>

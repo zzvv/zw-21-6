@@ -68,12 +68,12 @@ def return_rental(
     rental.status = 'returned'
     instrument = db.query(Instrument).filter(Instrument.id == rental.instrument_id).first()
     if instrument:
-        if data.return_check in ('severe_damage', 'lost'):
-            instrument.status = 'maintenance' if data.return_check == 'severe_damage' else 'retired'
-        elif data.return_check == 'good':
+        if data.return_check == 'good':
             instrument.status = 'available'
+        elif data.return_check == 'lost':
+            instrument.status = 'retired'
         else:
-            instrument.status = 'available'
+            instrument.status = 'maintenance'
     db.commit()
     db.refresh(rental)
     return rental
